@@ -1,0 +1,51 @@
+<!--pages/klf/klf.wxml-->
+<view class="header">
+    <view class="rc">康乐富云支付</view>
+</view>
+<view class="phone_one" bindtap="clickPerson">
+        <view class="phone_personal">{{firstPerson}}</view>
+ </view>
+<view class="person_box">
+    
+     <view class="phone_select" hidden="{{selectPerson}}">
+            <view class="select_one" bindtap="mySelect" wx:for="{{shuju}}" data-me="{{item.keshi}}">{{item.keshi}}</view>
+     </view>
+</view>
+
+<view class="phone_one" bindtap="clickPerson_one">
+        <view class="phone_personal">{{firstPerson_one}}</view>
+ </view>
+<view class="person_box">
+    
+     <view class="phone_select" hidden="{{selectPerson_one}}">
+            <view class="select_one" bindtap="mySelect_one" wx:for="{{fuwu}}" data-me="{{item.name_keshi}}">{{item.name_keshi}}</view>
+     </view>
+</view>
+<form bindsubmit="formSubmit">
+<view class="pay"> 
+	支付金额：<span class="pc">￥{{inputValue}}</span>
+</view>
+
+    <input name="pay_number"type="digit"  placeholder="请输入金额(最多10位)"  maxlength="10" class="payinput"bindinput="bindKeyInput" />
+    <input name="other" placeholder="备注信息" maxlength="10" class="payinput"/>
+ 
+<view name="pay"   for="pay1">支付方式:</view>
+<view class=""></view>
+
+<view class="{{xj1}}" bindtap="wx" >
+    <view class="wx_pic1" >
+        <image class="wx_img" src="/public/images/wx.png"></image>
+        <text class="zhi1">微信支付</text>
+        <image class="wx_xuan" id="wx" wx:if="{{wx==1}}"src="/public/images/gbh.png"></image>
+    </view>
+</view>
+<view class="{{xj2}}" bindtap="yl" >
+    <view class="wx_pic2" >
+        <image class="wx_img" src="/public/images/gt.png"></image>
+        <text class="zhi2" bindtap="zhi1">银联支付</text>
+        <image class="wx_xuan" id="yl" wx:if="{{yl==1}}" src="/public/images/gbh.png"></image>
+    </view>
+</view> 
+    <button formType="submit" type="primary">确认支付</button>
+</form>
+

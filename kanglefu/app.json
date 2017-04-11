@@ -1,0 +1,31 @@
+{
+  "pages":[
+     
+    "pages/klf/klf"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "black",
+    "navigationBarTitleText": "康乐富",
+    "navigationBarTextStyle":"#fff",
+    "backgroundTextStyle": "light"
+  }, "tabBar": {
+    "color":"#fff",
+    "backgroundColor":"#FD9C6C",
+    "selectedColor":"red",
+    "borderStyle":"white",
+     "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页"
+    }, {
+      "pagePath": "pages/logs/logs",
+      "text": "日志"
+    }]
+  
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
